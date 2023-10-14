@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+:root {
+  /* ### Primary */
+
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+
+
+/* ### Neutral */
+
+  --Very-Dark-Blue: hsl(234, 12%, 34%);
+  --Grayish-Blue: hsl(229, 6%, 66%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+}
+body {  
+  margin: 0 auto;
+  max-width: 35rem;
+  max-height: 100%;
+  font-size: 1em;
+  text-align: center;
+  padding: 6rem 2rem; 
+  color: var(--Very-Dark-Blue);
+  background-color: var(--Very-Light-Gray);
+}
+.container-header {
+  max-width: 35rem;
+  margin: 0 auto;
+}
+.title {
+  font-weight: 200;
+  font-size: 1.83em;
+  line-height: 1.4;
+}
+.bold{
+  display: block;
+  font-weight: 600;
+}
+.description {
+  color: var(--Grayish-Blue);
+  font-size: 1em;
+  margin-top: 1.3rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+.container-tools {
+  margin-top: 4rem;
+}
+.tool {
+  background-color: var(--white);
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 15px 20px hsla(229, 25%, 61%, 0.4);
+  margin-top: 1.7rem;
+  text-align: left;
+  border-radius: 0.7rem;
+  padding: 1.8rem;
+  overflow: hidden;
+}
+.tool::before {
+  content: '';
+  display: block;
+  width: calc(100% + 3.6rem) ;
+  transform: translate(-1.8rem, -1.8rem);
+  height: 0.35rem; 
+}
+.tool[name="supervisor"]::before {
+  background-color: var(--Cyan);
+}
+.tool[name="teamBuilder"]::before {
+  background-color: var(--Red);
+}
+.tool[name="karma"]::before {
+  background-color: var(--Orange);
+}
+.tool[name="calculator"]::before {
+  background-color: var(--Blue);
+}
+.tool .title-tool{
+  font-size: 1.69em;
+  font-weight: 600;
+}
+.tool .description-tool{
+  color: var(--Grayish-Blue);
+  font-size: 1.15em;  
+  margin-top: 0.60rem;
+  line-height: 1.5;
+}
+.tool .tool-img {
+  float: right;
+  margin-top: 1.8rem;
+}
+@media (min-width: 1024px ) {  
+  body { 
+    padding: 4rem 0;  
+    min-width: 68.5rem;    
+    overflow: hidden;
+  }
+  .container-tools {
+    display: flex;
+    align-items: center;    
+    justify-content: space-evenly;
+    position: relative;
+  }
+  .tool {
+    width: 20rem;
+    height: 15rem;
+  }
+
+  .tool .title-tool {
+    font-size: 1.3em;
+  }
+  .tool .description-tool {
+    font-size: 0.9em;
+  }
+}
+@media (min-width: 1440px ) {  
+  body {      
+    min-width: 78rem;    
+  }
+
+  .tool {
+    width: 23.5rem;
+    height: 16rem;
+  }
+
+  .tool .tool-img {
+    margin-top: 2.5rem;
+  }
+
+}

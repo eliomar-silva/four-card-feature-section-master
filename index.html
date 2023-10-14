@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Four card feature section</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <header class="container-header">
+    <h1 class="title">
+      Reliable, efficient delivery
+      <span class="bold">Powered by Technology</span>
+    </h1>
+
+    <p class="description">
+      Our Artificial Intelligence powered tools use millions of project data points
+      to ensure that your project is successful
+    </p>
+  </header>
+  <main class="container-tools">
+    <div class="tool" name="supervisor">
+      <h3 class="bold title-tool">Supervisor</h3>
+      <p class="description-tool">Monitors activity to identify project roadblocks</p>
+    </div>
+    <span class="container-tools-center">
+      <div class="tool" name="teamBuilder">
+        <h3 class="bold title-tool">Team Builder</h3>
+        <p class="description-tool">Scans our talent network to create the optimal team for your project</p>
+      </div>
+      <div class="tool" name="karma">
+        <h3 class="bold title-tool">Karma</h3>
+        <p class="description-tool">Regularly evaluates our talent to ensure quality</p>
+      </div>
+    </span>
+    <div class="tool" name="calculator">
+      <h3 class="bold title-tool">Calculator</h3>
+      <p class="description-tool">Uses data from past projects to provide better delivery estimates</p>
+    </div>
+  </main>
+
+
+  <script>
+    const datas = [
+      {
+        supervisor: {
+          img: "./images/icon-supervisor.svg",
+        }
+      },
+      {
+        teamBuilder: {
+          img: "./images/icon-team-builder.svg",
+
+        }
+      },
+      {
+        karma: {
+          img: "./images/icon-karma.svg",
+        }
+      },
+      {
+        calculator: {
+          img: "./images/icon-calculator.svg",
+        }
+      },
+    ];
+
+    const tools = document.querySelectorAll('.tool');
+
+    const createImg = (src) => {
+      const img = document.createElement('img');
+      img.classList.add("tool-img");
+      img.src = src;
+      return img;
+    };
+
+    tools.forEach(item => {
+      datas.map(data => {
+        const name = item.attributes.name.value;
+        if (data[name]) {
+          item.appendChild(createImg(data[name].img));
+        }
+      });      
+    });
+
+
+  </script>
+</body>
+
+</html>
